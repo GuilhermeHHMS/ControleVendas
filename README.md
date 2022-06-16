@@ -1,28 +1,33 @@
 
-  <div>
+<div>
     <h1> Controle de Vendas</h1>
     <p>Esse app tem como objetivo facilitar o dia a dia de vendedores e administradores de lojas simples.</p>
   <br>
-  </div>
+</div>
   
-  <div>
+<div>
     <h2>Screenshots:</h2>
-  <p><b>Tela inicial da aplicação:</b></p>
-    <img alt="imagem de Tela inicial da aplicação" height="500em" src=https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem1.png>
+    <h3><b>Tela inicial da aplicação:</b></h3>
+    <p>Os itens são inicializados pelo usuário, com opções de nome e valor, ao tocar no icone de Adicionar, no parte inferior direita da tela:<p>
+    <img alt="imagem de Tela inicial da aplicação" height="500em" src=https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem1.png>  
+    <img alt="imagem de Formulário" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem3.png">
   <hr>
-  </div>
+</div>
  
-  <div>
+<div>
   <br>
-  <p>Os itens são inicializados pelo usuário, com opções de nome e valor, ao tocar no icone de Adicionar:<p>
-  <img alt="imagem de Formulário" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
+  
+</div>
+
+<div>
   <br>
-  <p> todos os itens aparecem com o valor, e a quantidade vendida, igual a zero. <br> O usuário pode verificar o valor inicializado de cada item, tocando sobre ele:</p>
+  <p> todos os itens aparecem com o valor, e a quantidade vendida, igual a zero. <br> O usuário pode verificar o valor inicializado de cada item, tocando sobre ele:     </p>
   <img alt="imagem de Lista preenchida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem2.png">
+  <img alt="imagem de Lista expandida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
     
     
   <br>
-  </div>
+</div>
   
   <div>
   <p>Os itens são inicializados pelo usuário
