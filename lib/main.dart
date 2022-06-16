@@ -102,12 +102,12 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .65,
+                  height: MediaQuery.of(context).size.height * .73,
                   child: Column(
                     children: [
                       SingleChildScrollView(
                         child: SizedBox(
-                          height: MediaQuery.of(context).size.height * .63,
+                          height: MediaQuery.of(context).size.height * .70,
                           child: TransactionList(
                               _transactions, _removeItem, _itemAlt),
                         ),
@@ -118,23 +118,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 FittedBox(
                   fit: BoxFit.values.first,
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    height: 30,
+                    margin: const EdgeInsets.symmetric(horizontal: 75),
+                    padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
                           'Total das vendas: ',
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          'R\$${sum.toStringAsFixed(2).replaceAll('.', ',')}',
-                          style: const TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green),
+                        FittedBox(
+                          child: Text(
+                            'R\$${sum.toStringAsFixed(2).replaceAll('.', ',')}',
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green),
+                          ),
                         ),
                       ],
                     ),
@@ -156,12 +160,15 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 100,
               child: Padding(
                 padding: const EdgeInsets.all(15.2),
-                child: IconButton(
-                  iconSize: 30,
-                  onPressed: () => _modalTextForm(context),
-                  icon: const Icon(
-                    Icons.add,
-                    color: Colors.white,
+                child: Transform.scale(
+                  scale: 1.7,
+                  child: IconButton(
+                    iconSize: 23,
+                    onPressed: () => _modalTextForm(context),
+                    icon: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

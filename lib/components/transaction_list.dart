@@ -65,11 +65,12 @@ class TransactionList extends StatelessWidget {
                       //backgroundColor: Colors.white,
                       child: FittedBox(
                         child: Padding(
-                          padding: const EdgeInsets.all(2),
+                          padding: const EdgeInsets.only(top: 5),
                           child: Text(
                             'R\$ ${tr.price.toStringAsFixed(2).replaceAll('.', ',')}',
                             style: const TextStyle(
                               color: Colors.green,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
