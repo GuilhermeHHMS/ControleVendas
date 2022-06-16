@@ -21,7 +21,7 @@
 
 <div>
   <br>
-  <p> todos os itens aparecem com o valor, e a quantidade vendida, igual a zero. <br> O usuário pode verificar o valor inicializado de cada item, tocando sobre ele:     </p>
+  <p> todos os itens aparecem com o valor, e a quantidade vendida, igual a zero. <br> O usuário pode verificar o valor inicializado de cada item, tocando sobre eles:     </p>
   <img alt="imagem de Lista preenchida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem2.png">
   <img alt="imagem de Lista expandida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
     
@@ -30,8 +30,6 @@
 </div>
   
   <div>
-  <p>Os itens são inicializados pelo usuário
-  <p><b>Itens vendidos:</b><p>
-  <img alt="imagem de Itens vendidos" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem3.png">
-  <br>
+    <p>Para começar a registrar os valores, basta tocar sobre os icones do item da lista, incrementando o decrementando, de acordo com as vendas:
+    <img alt="imagem de Lista final" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
   
