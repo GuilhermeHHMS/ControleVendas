@@ -1,16 +1,35 @@
-# controle_app
 
-A new Flutter project.
+<div>
+    <h1> Controle de Vendas</h1>
+    <p>Esse app tem como objetivo facilitar o dia a dia de vendedores e administradores de lojas simples.</p>
+  <br>
+</div>
+  
+<div>
+    <h2>Screenshots:</h2>
+    <h3><b>Tela inicial da aplicação:</b></h3>
+    <p>Os itens são inicializados pelo usuário, com opções de nome e valor, ao tocar no icone de Adicionar, no parte inferior direita da tela:<p>
+    <img alt="imagem de Tela inicial da aplicação" height="500em" src=https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem1.png>  
+    <img alt="imagem de Formulário" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem3.png">
+  <hr>
+</div>
+ 
+<div>
+  <br>
+  
+</div>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div>
+  <br>
+  <p> todos os itens aparecem com o valor, e a quantidade vendida, igual a zero. <br> O usuário pode verificar o valor inicializado de cada item, tocando sobre eles:     </p>
+  <img alt="imagem de Lista preenchida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem2.png">
+  <img alt="imagem de Lista expandida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
+    
+    
+  <br>
+</div>
+  
+  <div>
+    <p>Para começar a registrar os valores, basta tocar sobre os icones do item da lista, incrementando o decrementando, de acordo com as vendas:
+    <img alt="imagem de Lista final" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
+  
