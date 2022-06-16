@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                     height: 30,
                     margin: const EdgeInsets.symmetric(horizontal: 75),
-                    padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
