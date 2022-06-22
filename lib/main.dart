@@ -84,8 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     double sum = _transactions.fold(0, (prev, tr) => prev + tr.price);
+    double widthContainerBar = MediaQuery.of(context).size.width * .65;
+    double heightContainerBar = MediaQuery.of(context).size.height * 0.14;
 
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFFEE),
       key: scaffoldState,
       appBar: AppBar(
         centerTitle: true,
@@ -94,7 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.circular(33),
         ),
-        title: const Text('Controle de Vendas'),
+        title: const Text(
+          'Controle de Vendas',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: Stack(
         children: [
@@ -173,7 +179,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-          )
+          ),
+          Positioned.directional(
+            textDirection: TextDirection.ltr,
+            start:
+                MediaQuery.of(context).size.width * 0.5 - widthContainerBar / 2,
+            bottom: MediaQuery.of(context).size.height * .02 - 42,
+            child: Container(
+              width: widthContainerBar,
+              height: heightContainerBar,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(33),
+                border: Border.all(
+                    width: 2, color: Colors.black, style: BorderStyle.solid),
+              ),
+            ),
+          ),
         ],
       ),
       //floatingActionButton: FloatingActionButton(
