@@ -42,7 +42,7 @@ class TransactionList extends StatelessWidget {
                   child: ExpansionTile(
                     expandedAlignment: Alignment.center,
                     expandedCrossAxisAlignment: CrossAxisAlignment.center,
-                    textColor: Colors.red,
+                    textColor: Theme.of(context).colorScheme.primary,
                     children: <Widget>[
                       SizedBox(
                         height: 60,
@@ -55,7 +55,8 @@ class TransactionList extends StatelessWidget {
                           ),
                           trailing: IconButton(
                             onPressed: () => onRemove(tr.id),
-                            icon: const Icon(Icons.delete, color: Colors.red),
+                            icon: Icon(Icons.delete,
+                                color: Theme.of(context).colorScheme.primary),
                           ),
                         ),
                       ),
@@ -68,8 +69,8 @@ class TransactionList extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 5),
                           child: Text(
                             'R\$ ${tr.price.toStringAsFixed(2).replaceAll('.', ',')}',
-                            style: const TextStyle(
-                              color: Colors.green,
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
@@ -80,7 +81,9 @@ class TransactionList extends StatelessWidget {
                     title: Text(
                       tr.title,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
                     trailing: Stack(
                       children: [
@@ -94,7 +97,7 @@ class TransactionList extends StatelessWidget {
                               },
                               icon:
                                   const Icon(Icons.do_not_disturb_on_outlined),
-                              color: Colors.green,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                             Text(
                               tr.stack.toString(),
@@ -108,9 +111,9 @@ class TransactionList extends StatelessWidget {
                                 double code = 0;
                                 valueAlteration(tr.id, code, tr.fixedValue);
                               },
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.add_circle_outline,
-                                color: Colors.green,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             ),
                           ],

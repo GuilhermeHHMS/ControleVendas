@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
     double heightContainerBar = 120;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFEE),
+      backgroundColor: const Color.fromARGB(255, 242, 254, 236),
       key: scaffoldState,
       appBar: AppBar(
         centerTitle: true,
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .73,
+                  height: MediaQuery.of(context).size.height * .77,
                   child: Column(
                     children: [
                       SingleChildScrollView(
