@@ -12,9 +12,17 @@ class ControleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.red,
+          secondary: Colors.green,
+          brightness: Brightness.light,
+        ),
+        fontFamily: 'OpenSans',
+      ),
+      home: const MyHomePage(),
     );
   }
 }
@@ -32,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [];
 
   void _addItem(String title, double value) {
-    final item = Transaction(
+    final Transaction item = Transaction(
       id: Random().nextDouble().toString(),
       title: title,
       price: 0,
@@ -84,18 +92,21 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     double sum = _transactions.fold(0, (prev, tr) => prev + tr.price);
-    double widthContainerBar = MediaQuery.of(context).size.width * .65;
-    double heightContainerBar = MediaQuery.of(context).size.height * 0.14;
+    double widthContainerBar = MediaQuery.of(context).size.width * 0.65;
+    double heightContainerBar = 120;
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFEE),
       key: scaffoldState,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         elevation: 0,
-        shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.circular(33),
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(50),
+            bottomRight: Radius.circular(50),
+          ),
         ),
         title: const Text(
           'Controle de Vendas',
@@ -121,35 +132,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                FittedBox(
-                  fit: BoxFit.values.first,
-                  child: Container(
-                    height: 30,
-                    margin: const EdgeInsets.symmetric(horizontal: 75),
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Total das vendas: ',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        FittedBox(
-                          child: Text(
-                            'R\$${sum.toStringAsFixed(2).replaceAll('.', ',')}',
-                            style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -159,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               alignment: Alignment.topLeft,
               decoration: BoxDecoration(
-                color: Colors.green,
+                color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(200),
               ),
               height: 100,
@@ -184,8 +166,31 @@ class _MyHomePageState extends State<MyHomePage> {
             textDirection: TextDirection.ltr,
             start:
                 MediaQuery.of(context).size.width * 0.5 - widthContainerBar / 2,
-            bottom: MediaQuery.of(context).size.height * .02 - 42,
+            bottom: -42,
             child: Container(
+              child: Expanded(
+                child: Column(
+                  children: [
+                    const Text(
+                      'Total das vendas: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    FittedBox(
+                      child: Text(
+                        'R\$${sum.toStringAsFixed(2).replaceAll('.', ',')}',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               width: widthContainerBar,
               height: heightContainerBar,
               decoration: BoxDecoration(
@@ -198,13 +203,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      //floatingActionButton: FloatingActionButton(
-      //elevation: 0,
-      //onPressed: () => _modalTextForm(context),
-      //child: const Icon(Icons.add),
-      // backgroundColor: Colors.green,
-      //),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
