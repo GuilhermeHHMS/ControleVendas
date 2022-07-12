@@ -115,24 +115,49 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Stack(
         children: [
-          SizedBox(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * .77,
-                  child: Column(
-                    children: [
-                      SingleChildScrollView(
-                        child: SizedBox(
-                          height: MediaQuery.of(context).size.height * .70,
-                          child: TransactionList(
-                              _transactions, _removeItem, _itemAlt),
-                        ),
+          Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .80,
+                child: Column(
+                  children: [
+                    SingleChildScrollView(
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * .75,
+                        child: TransactionList(
+                            _transactions, _removeItem, _itemAlt),
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Positioned(
+            bottom: -40,
+            left: -40,
+            child: Container(
+              alignment: Alignment.topRight,
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                borderRadius: BorderRadius.circular(200),
+              ),
+              height: 100,
+              width: 100,
+              child: Padding(
+                padding: const EdgeInsets.all(15.2),
+                child: Transform.scale(
+                  scale: 1.7,
+                  child: IconButton(
+                    iconSize: 23,
+                    onPressed: () => {},
+                    icon: const Icon(
+                      Icons.poll_outlined,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ],
+              ),
             ),
           ),
           Positioned(
@@ -168,36 +193,37 @@ class _MyHomePageState extends State<MyHomePage> {
                 MediaQuery.of(context).size.width * 0.5 - widthContainerBar / 2,
             bottom: -42,
             child: Container(
-              child: Expanded(
-                child: Column(
-                  children: [
-                    const Text(
-                      'Total das vendas: ',
+              child: Column(
+                children: [
+                  const Text(
+                    'Total das vendas: ',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  FittedBox(
+                    child: Text(
+                      'R\$${sum.toStringAsFixed(2).replaceAll('.', ',')}',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
-                    FittedBox(
-                      child: Text(
-                        'R\$${sum.toStringAsFixed(2).replaceAll('.', ',')}',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.secondary,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               width: widthContainerBar,
               height: heightContainerBar,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(33),
+                borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                    width: 2, color: Colors.black, style: BorderStyle.solid),
+                  width: 2,
+                  color: Colors.black,
+                  style: BorderStyle.solid,
+                ),
               ),
             ),
           ),
