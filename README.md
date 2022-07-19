@@ -20,8 +20,7 @@
   <p> todos os itens aparecem com o valor, e a quantidade vendida, igual a zero. <br> O usuário pode verificar o valor inicializado de cada item, tocando sobre eles:     </p>
   <img alt="imagem de Lista preenchida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem2.png">
   <img alt="imagem de Lista expandida" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem4.png">
-    
-    
+  <hr>         
   <br>
 </div>
   
