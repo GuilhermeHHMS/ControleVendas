@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:controle_app/components/text_forms.dart';
+import 'package:controle_app/screens/graph_screen.dart';
 import 'package:flutter/material.dart';
 import './components/text_forms.dart';
 import 'components/transaction.dart';
@@ -15,6 +16,7 @@ class ControleApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        canvasColor: const Color.fromRGBO(225, 224, 220, 1),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.red,
           secondary: Colors.green,
@@ -89,6 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
+  void _graphScreen(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => const GraphScreen(
+          key: null,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double sum = _transactions.fold(0, (prev, tr) => prev + tr.price);
@@ -96,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
     double heightContainerBar = 120;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 242, 254, 236),
+      //backgroundColor: const Color.fromARGB(255, 242, 254, 236),
       key: scaffoldState,
       appBar: AppBar(
         centerTitle: true,
@@ -136,22 +148,22 @@ class _MyHomePageState extends State<MyHomePage> {
           Positioned(
             bottom: -40,
             left: -40,
-            child: Container(
-              alignment: Alignment.topRight,
-              decoration: BoxDecoration(
-                color: Colors.orange,
-                borderRadius: BorderRadius.circular(200),
-              ),
-              height: 100,
-              width: 100,
-              child: Padding(
-                padding: const EdgeInsets.all(15.2),
-                child: Transform.scale(
-                  scale: 1.7,
-                  child: IconButton(
-                    iconSize: 23,
-                    onPressed: () => {},
-                    icon: const Icon(
+            child: InkWell(
+              borderRadius: BorderRadius.circular(50),
+              onTap: () => _graphScreen(context),
+              child: Container(
+                alignment: Alignment.topRight,
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(200),
+                ),
+                height: 100,
+                width: 100,
+                child: Padding(
+                  padding: const EdgeInsets.all(25),
+                  child: Transform.scale(
+                    scale: 1.3,
+                    child: const Icon(
                       Icons.poll_outlined,
                       color: Colors.white,
                     ),
@@ -163,22 +175,22 @@ class _MyHomePageState extends State<MyHomePage> {
           Positioned(
             bottom: -40,
             right: -40,
-            child: Container(
-              alignment: Alignment.topLeft,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.circular(200),
-              ),
-              height: 100,
-              width: 100,
-              child: Padding(
-                padding: const EdgeInsets.all(15.2),
-                child: Transform.scale(
-                  scale: 1.7,
-                  child: IconButton(
-                    iconSize: 23,
-                    onPressed: () => _modalTextForm(context),
-                    icon: const Icon(
+            child: InkWell(
+              borderRadius: BorderRadius.circular(50),
+              onTap: () => _modalTextForm(context),
+              child: Container(
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                  borderRadius: BorderRadius.circular(200),
+                ),
+                height: 100,
+                width: 100,
+                child: Padding(
+                  padding: const EdgeInsets.all(25),
+                  child: Transform.scale(
+                    scale: 1.3,
+                    child: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),

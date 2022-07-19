@@ -62,11 +62,9 @@ class TransactionList extends StatelessWidget {
                       ),
                     ],
                     leading: SizedBox(
-                      //maxRadius: 25,
-                      //backgroundColor: Colors.white,
-                      child: FittedBox(
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 5),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: FittedBox(
                           child: Text(
                             'R\$ ${tr.price.toStringAsFixed(2).replaceAll('.', ',')}',
                             style: TextStyle(
