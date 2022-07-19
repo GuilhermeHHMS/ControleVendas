@@ -25,7 +25,7 @@
 </div>
   
   <div>
-    <p>Para começar a registrar os valores, basta tocar sobre os icones do item da lista, incrementando o decrementando, de acordo com as vendas:</p>
+    <p>Para começar a registrar os valores, basta tocar sobre os icones de de adicionar(+) e subtrair (-) do item da lista, incrementando o decrementando, de acordo com as vendas:</p>
     <img alt="imagem de Lista final" height="500em" src="https://github.com/guilhermehms/ControleVendas/blob/master/screenshots/imagem5.png">
   </div>
   
